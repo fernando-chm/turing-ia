@@ -1,0 +1,47 @@
+---
+import './Nav.css';
+
+const { renderType } = Astro.props;
+
+---
+<script>
+    import '../../scripts/navScrolling'
+</script>
+
+<div class="nav-container">
+{
+    renderType === 'post' ? null : 
+
+    <h1 class="logo display-block"><a href="/" class="home">Turing IA</a></h1>
+
+    <div class="hamburger display-block">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </div>
+
+    <nav class="nav-links no-display">
+        <div class="links-container">
+            <div class="close-hamburger" autofocus>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <ul>
+                <li>
+                    <a href="/about" class="link links-hover-a">Sobre nosotros</a>
+                </li>
+                <li>
+                    <a href="/services" class="link links-hover-a">Nuestros servicios</a>
+                </li>
+                <li>
+                    <a href="/blog" class="link links-hover-a">Blog</a>
+                </li>
+                <li> 
+                    <a href="#contact"><p class="link contact-hover-a">Contáctanos</p></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+}
+</div>

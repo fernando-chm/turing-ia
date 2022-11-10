@@ -1,0 +1,77 @@
+/* Mobile First */
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding: 5rem;
+    margin-top: 5rem;
+    color: #000;
+    gap: 2rem;
+}
+
+.contact-title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 5rem;
+    color: #002faf;
+    margin-bottom: 5rem;
+}
+
+.message {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+label {
+    display: block;
+    border-bottom: 1px solid #002faf;
+    width: fit-content;
+}
+
+input,
+textarea {
+    border: 0;
+    border-bottom: 1px solid #3a3a3a;
+    padding: 1rem;
+    resize: none;
+    width: 95%;
+}
+
+textarea {
+    margin-top: 1rem;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+@media screen and (min-width: 640px) {
+    form {
+        padding: 5rem 8rem;
+        column-gap: 8rem;
+    }
+}
+
+/* @media screen and (min-width: 864px) {
+    
+} */
+ 
+@media screen and (min-width: 1193px) {
+    form {
+        padding: 5rem 10rem;
+    }
+
+    .form-container {
+        width: 115rem;
+        margin: 0 auto;
+    }
+}
+
+

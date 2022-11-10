@@ -1,0 +1,70 @@
+---
+import './CardBox.css';
+
+const allPosts = await Astro.glob('../../pages/posts/*.md');
+const { cardData } = Astro.props;
+const { cardData1, cardData2, cardData3 } = cardData;
+const { cardImg1, cardP1 } = cardData1;
+const { cardImg2, cardP2 } = cardData2;
+const { cardImg3, cardP3 } = cardData3;
+const { cardImg1src, cardImg1alt } = cardImg1;
+const { cardImg2src, cardImg2alt } = cardImg2;
+const { cardImg3src, cardImg3alt } = cardImg3;
+
+
+function getPostURL(cardNumber: number, type: string){
+    switch (type) {
+        case 'about':
+            break;
+        case 'services':
+            break;
+        case 'blog':
+            for (let post = 0; post < allPosts.length; post++) {
+                if (cardNumber === 1 && allPosts[post].frontmatter.title === cardP1) {
+                    var post1URL = allPosts[post].url;
+                    break;
+                } else if (cardNumber === 2 && allPosts[post].frontmatter.title === cardP2) {
+                    var post2URL = allPosts[post].url;
+                    break;
+                } else if (cardNumber === 3 && allPosts[post].frontmatter.title === cardP3) {
+                    var post3URL = allPosts[post].url;
+                    break;
+                }
+            }
+            
+            if (cardNumber === 1) {
+                return post1URL;
+            } else if (cardNumber === 2) {
+                return post2URL;
+            } else if (cardNumber === 3) {
+                return post3URL;
+            }
+
+            break;
+        default:
+            break;
+    }
+}
+
+---
+
+<div class="cardbox">
+    <div class="card-container">
+        <a href={`${getPostURL(1, 'blog')}`}>
+            <img src={cardImg1src} alt={cardImg1alt}>
+        </a>
+        <p>{cardP1}</p>
+    </div>
+    <div class="card-container">
+        <a href={`${getPostURL(2, 'blog')}`}>
+            <img src={cardImg2src} alt={cardImg2alt}>
+        </a>
+        <p>{cardP2}</p>
+    </div>
+    <div class="card-container">
+        <a href={`${getPostURL(3, 'blog')}`}>
+            <img src={cardImg3src} alt={cardImg3alt}>
+        </a>
+        <p>{cardP3}</p>
+    </div>
+</div>

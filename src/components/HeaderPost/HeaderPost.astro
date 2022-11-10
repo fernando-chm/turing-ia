@@ -1,0 +1,22 @@
+---
+import Nav from "../Nav/Nav.astro";
+import './HeaderPost.css'
+
+const { frontmatterProps } = Astro.props;
+const { layout, title, author, description, image, pubDate, tags } = frontmatterProps;
+---
+<header>
+    <Nav renderType='post'/>
+    <div class="header-post-container">
+        <h1 class="title-post">{title}</h1>
+        <img src={image.url} alt={image.alt} class="image-post"/>
+        <p class="description-post">{description}</p>
+        <p class="author-post">Escrito por: {author} el 
+            <span class="pubDate-post">{pubDate.slice(0,10)}</span>
+        </p>
+        <p class="tags">Tags:</p>
+        <div class="tags-post">
+            {tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a> )}
+        </div>
+    </div>
+</header>

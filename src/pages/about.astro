@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardBox from "../components/CardBox/CardBox.astro";
+import FloatBox from "../components/FloatBox/FloatBox.astro";
+import InfoBox from "../components/InfoBox/InfoBox.astro";
+import WideBox from "../components/WideBox/WideBox.astro";
+import SectionHeader from "../components/SectionHeader/SectionHeader.astro";
+
+const pageTitle = "Sobre nosotros";
+const coverDescription = {
+	'headline': '¿Quiénes somos?',
+	'caption': 'Somos especialistas en proyectos de Business Analytics; contribuimos con su empresa para mejorar la toma de decisiones a través de sus datos.',
+	'buttonID': 'about'
+}
+
+// Objetos cardData
+
+const premios = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/trofeo.png',
+			'cardImg1alt': 'Imagen de un trofeo'
+		},
+		'cardP1': 'Ganadores del OPI con Tableau'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/trofeo.png',
+			'cardImg2alt': 'Imagen de un trofeo'
+		},
+		'cardP2': 'Ganadores en Tableau Partner Bootcamp'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/trofeo.png',
+			'cardImg3alt': 'Imagen de un trofeo'
+		},
+		'cardP3': 'Certificados ante PMI & IPMA'
+	}
+}
+
+// Objetos floatBoxData
+
+const aboutFloat = {
+	'tag': 'Business Intelligence',
+	'title': 'Transformamos tus datos en oportunidades',
+	'text': 'Con nuestras soluciones seras capaz de identificar tendencias de mercado, potenciar los recursos de la empresa, y crear planes de acción anticipando errores y amenazas para tus estrategias corporativas.'
+}
+
+// Objetos infoBoxData
+
+const about = {
+	'tag': 'About',
+	'title': 'Mas de 15 años de experiencia brindando soluciones innovadoras en más de 10 industrias',
+	'text': 'Contamos con los mejores Especialistas en Análisis Descriptivos, Predictivos y Prescriptivos, equipados con las certificaciones más importantes en el desarrollo de Análisis de Datos mediante Knowledge Discovery in Database (KDD).',
+	'keyword': 'construyendo a través de datos',
+	'links': {
+		'a1': ['./services', 'Business analytics'],
+		'a2': ['./services', 'Desarrollo de software'],
+		'a3': ['./services', 'Tecnologías aplicadas'],
+		'a4': ['./services', 'Cursos completos'],
+		'a5': ['./services', 'Tableau para grandes empresas'],
+		'a6': ['./blog', 'Últimas publicaciones del blog']
+	}
+}
+
+const knowledge = {
+	'tag': 'Knowledge',
+	'title': 'Especialistas en tecnología y Ciencia de Datos',
+	'text': 'Proporcionamos a nuestros clientes una gama de productos y servicios relacionados con el análisis de datos, mediante el uso de tecnologias como Tableau, Salesforce, PMI, Scrum.',
+	'keyword': '+15 años de experiencia nos respaldan',
+	'links': {
+		'a1': ['./services', 'Data Science'],
+		'a2': ['./services', 'Business Intelligence'],
+		'a3': ['./services', 'Data Analytics'],
+		'a4': ['./services', 'Big Data'],
+		'a5': ['./services', 'Machine Learning'],
+		'a6': ['./services', 'Artificial Intelligence']
+	}
+}
+
+// Objetos wideBoxData
+
+const aboutWide = {
+	'item1': {
+		'title1': 'Certificados por el PMI',
+		'keyword1': 'Somos',
+		'text1': ' profesionales con conocimientos y competencias acreditadas ante organismos nacionales e internacionales.'
+	},
+	'item2': {
+		'title2': 'Certificados por Tableau Platform',
+		'keyword2': 'Ayudamos',
+		'text2': ' en la toma de decisiones en todos los niveles de la empresa anticipándonos mediante la identificación de tendencias con modelos estadísticos.'
+	},
+	'item3': {
+		'title3': 'SCRUM como forma de trabajo',
+		'keyword3': 'Adoptamos',
+		'text3': ' la metodología SCRUM como forma de trabajo en el desarrollo de las soluciones que tu empresa necesita.'
+	},
+	'item4': {
+		'title4': 'Ciencia de Datos',
+		'keyword4': 'Tomamos',
+		'text4': ' decisiones estratégicas basadas en la interpretación y el análisis de datos para cumplir con cualquier objetivo que tu empresa se plantee.'
+	}
+}
+---
+
+<BaseLayout pTitle={pageTitle} coverDesc={coverDescription} frontmatterProps='' >
+	<InfoBox infoBoxData={about}/>
+	<FloatBox floatBoxData={aboutFloat}/>
+	<WideBox wideBoxData={aboutWide}/>
+	<SectionHeader sectionHeader='Fuimos premiados con tres grandes logros; y vamos por más' />
+	<CardBox cardData={premios} />
+	<InfoBox infoBoxData={knowledge}/>
+</BaseLayout>
+
+

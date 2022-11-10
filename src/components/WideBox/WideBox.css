@@ -1,0 +1,134 @@
+
+.widebox-container {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100%;
+	color: #fff;
+}
+
+.ba-img {
+	background-image: url(../../../imgs/wbox/ba.jpg);
+}
+
+.desarrollo-img {
+	background-image: url(../../../imgs/wbox/desarrollo.jpg);
+}
+
+.tech-img {
+	background-image: url(../../../imgs/wbox/tech.jpg);
+}
+
+.cursos-img {
+	background-image: url(../../../imgs/wbox/cursos.jpg);
+}
+
+.pmi-img {
+	background-image: url(../../../imgs/wbox/pmi.jpg);
+}
+
+.tableau-img {
+	background-image: url(../../../imgs/wbox/tableau.jpg);
+}
+
+.scrum-img {
+	background-image: url(../../../imgs/wbox/scrum.jpg);
+}
+
+.data-img {
+	background-image: url(../../../imgs/wbox/data.jpg);
+}
+
+.td-img {
+	background-image: url(../../../imgs/wbox/td.jpg);
+}
+
+.tp-img {
+	background-image: url(../../../imgs/wbox/tp.jpg);
+}
+
+.tc-img {
+	background-image: url(../../../imgs/wbox/tc.jpg);
+}
+
+.ts-img {
+	background-image: url(../../../imgs/wbox/ts.jpg);
+}
+
+.fallback-img {
+	background-image: url(../../../imgs/wbox/fallback-wbox.jpg);
+}
+
+/* Mobile First */
+
+.grid-widebox {
+	display: grid;
+	grid-template-rows: auto;
+	padding: 5rem;
+	background: rgba(0, 0, 0, 0.8);
+	height: 100vh;
+	justify-items: center;
+}
+
+.subgrid-widebox {
+	display: grid;
+	grid-template-rows: auto;
+	align-content: space-between;
+}
+
+.grid-widebox h2 {
+	font-size: 6rem;
+	font-weight: 400;
+	text-align: center;
+}
+
+.grid-widebox p span {
+	font-weight: 600;
+	font-size: 4rem;
+	color: #0c74fa;
+}
+
+.text {
+	font-size: 2.6rem;
+	font-weight: 400;
+}
+
+.widebox-timer {
+	width: 0%;
+	height: 1rem;
+	background-color: #0c74fa;
+	animation-duration: 15s;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		width: 0%;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+/* @media screen and (min-width: 640px){
+    
+} */
+
+@media screen and (min-width: 864px){
+   .grid-widebox {
+	padding: 5rem 10rem;
+   }
+}
+
+@media screen and (min-width: 1193px){
+    .grid-widebox {
+		padding: 10rem 25rem;
+	}
+
+	.subgrid-widebox {
+		align-content: space-evenly;
+	}
+
+}

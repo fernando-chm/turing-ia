@@ -1,0 +1,84 @@
+/* Mobile First */
+
+.header-post-container {
+    width: 85vw;
+    margin: 3.5rem auto;
+}
+
+.slot-container {
+    width: 85vw;
+    margin: 0 auto;
+  }
+
+img {
+    width: 100%;
+}
+
+.title-post {
+    font-size: 5rem;
+    color: #002faf;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #002faf;
+    width: fit-content;
+}
+
+.description-post {
+    font-size: 1.6rem;
+    margin: 2rem 0;
+}
+
+.image-post {
+    width: 85vw;
+    height: 50vh;
+    margin: 4rem auto;
+    border-radius: 1.6rem;
+}
+
+.author-post {
+    font-style: italic;
+}
+
+.tags {
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.tags-post {
+    background-color: #0c74fa;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.tags-post a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: .5rem;
+    background-color: #002faf;
+    border-radius: 1rem;
+    border-bottom: 1px dotted #fff;
+}
+
+@media screen and (min-width: 640px){
+    .header-post-container,
+    .image-post,
+    .slot-container {
+        width: 75vw;
+    }
+}
+
+@media screen and (min-width: 864px){
+    .header-post-container,
+    .image-post,
+    .slot-container {
+        width: 65vw;
+    }
+}
+
+@media screen and (min-width: 1193px){
+    .header-post-container,
+    .image-post,
+    .slot-container {
+        width:60rem;
+    }
+}

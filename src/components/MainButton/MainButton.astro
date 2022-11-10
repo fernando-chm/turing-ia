@@ -1,0 +1,38 @@
+---
+const { btnLabelID, btnClass } = Astro.props;
+import './MainButton.css'
+---
+
+<p class={
+            btnClass === 'home' ? 'btn-home btn' :
+            btnClass === 'about' ? 'btn-about btn' :
+            btnClass === 'services' ? 'btn-services btn' :
+            btnClass === 'blog' ? 'btn-blog btn' : 
+            btnClass === 'floatbox' ? 'btn-floatbox' : 
+            btnClass === 'infobox' ? 'btn-infobox' : 
+            btnClass === 'widebox' ? 'btn-widebox btn' : 
+            btnClass === 'contact' ? 'btn-contact' : ''
+        }
+>
+        {
+            btnLabelID === 'home' ? 'Aprender más' :
+            btnLabelID === 'about' ? 'Conoce nuestra historia' :
+            btnLabelID === 'services' ? 'Más información' :
+            btnLabelID === 'blog' ? 'Ver publicaciones' : 
+            btnLabelID === 'floatbox' ? 'Conoce más' : 
+            btnLabelID === 'infobox' ? 'Conoce más' : 
+            btnLabelID === 'Business Analytics' ? 'Conoce nuestra metodología' : 
+            btnLabelID === 'Desarrollo de soluciones' ? 'Ver portafolio de trabajo' : 
+            btnLabelID === 'Tecnologías' ? 'Conoce las herramientas del futuro' : 
+            btnLabelID === 'Cursos' ? 'Selecciona un curso y vuélvete un experto' : 
+            btnLabelID === 'contact' ? 'Enviar' : 
+            btnLabelID === 'Certificados por el PMI' ? 'Ver más' : 
+            btnLabelID === 'Certificados por Tableau Platform' ? 'Ver logros' : 
+            btnLabelID === 'SCRUM como forma de trabajo' ? 'Conoce más sobre SCRUM' :
+            btnLabelID === 'Ciencia de Datos' ? 'Aprende sobre Ciencia de Datos' : 
+            btnLabelID === 'Tableau Desktop' ? 'Aprende sobre Tableau Desktop' :
+            btnLabelID === 'Tableau Prep' ? 'Aprende sobre Tableau Prep' : 
+            btnLabelID === 'Tableau Cloud' ? 'Aprende sobre Tableau Cloud' :
+            btnLabelID === 'Tableau Server' ? 'Aprende sobre Tableau Server' : ''
+        }
+</p>

@@ -1,0 +1,36 @@
+---
+import Nav from "../Nav/Nav.astro";
+import MainButton from "../MainButton/MainButton.astro";
+import './Header.css'
+
+const { cover, coverDescObj } = Astro.props;
+const { headline, caption, buttonID } = coverDescObj;
+
+const coverRoute = '../../imgs/covers/';
+let currentCover = 
+        cover === 'Home | Turing IA' ? coverRoute + 'home-cover.mp4' :
+        cover === 'Sobre nosotros' ? coverRoute + 'about-cover.mp4' :
+        cover === 'Nuestros servicios' ? coverRoute + 'services-cover.mp4' :
+        cover === 'Blog' ? coverRoute + 'blog-cover.mp4' : 
+        coverRoute + 'fallback-cover.mp4';
+---
+<header>
+    <div class="cover-container">
+        <video src={currentCover} autoplay loop muted />
+    </div>
+    <Nav renderType='any'/>
+    <div class="cover-desc">
+        <h2 class="headline">{headline}</h2>
+        <p class="caption">{caption}</p>
+        <a href={
+            cover === 'Home | Turing IA' ? '/' :
+            cover === 'Sobre nosotros' ? './about' :
+            cover === 'Nuestros servicios' ? './services' :
+            cover === 'Blog' ? './blog' : 
+            ''
+        }
+        >
+            <MainButton btnLabelID={buttonID} btnClass={buttonID} />
+        </a>
+    </div>
+</header>

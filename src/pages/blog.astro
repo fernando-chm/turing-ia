@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FloatBox from "../components/FloatBox/FloatBox.astro";
+import CardBox from "../components/CardBox/CardBox.astro";
+import SectionHeader from "../components/SectionHeader/SectionHeader.astro";
+
+const pageTitle = "Blog";
+const coverDescription = {
+	'headline': 'Blog',
+	'caption': 'Mantente al tanto de nuestras entradas sobre los últimos desarrollos en tecnología y negocios de analítica de datos.',
+	'buttonID': 'blog'
+}
+
+// Objetos floatBoxData
+
+const blogFloat = {
+	'tag': 'Una cultura basada en datos',
+	'title': 'Los datos son el nuevo petróleo en la era digital',
+	'text': 'La cultura digital actual experimenta un cambio exponencial en innovacion comercial y estratégica gracias al análisis de datos a gran escala. Para la mayoría de las empresas, se trata de un cambio profundo. Aprende más de Ciencia de Datos con nuestras publicaciones.'
+}
+
+// Objetos cardData
+
+const blogCard1 = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/blog-cards/c1-p1.jpg',
+			'cardImg1alt': 'Miniatura del post'
+		},
+		'cardP1': 'Una mirada a Tableau'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/blog-cards/c1-p2.jpg',
+			'cardImg2alt': 'Miniatura del post'
+		},
+		'cardP2': 'Mitos sobre Business Intelligence'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/blog-cards/c1-p3.jpg',
+			'cardImg3alt': 'Miniatura del post'
+		},
+		'cardP3': 'Tecnologías para la transformación digital'
+	}
+}
+
+const blogCard2 = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/blog-cards/c2-p1.jpg',
+			'cardImg1alt': 'Miniatura del post'
+		},
+		'cardP1': 'Análisis de datos con Excel y Tableau'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/blog-cards/c2-p2.png',
+			'cardImg2alt': 'Miniatura del post'
+		},
+		'cardP2': 'Cómo mezclar Excel y Tableau para un mejor análisis de datos'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/blog-cards/c2-p3.png',
+			'cardImg3alt': 'Miniatura del post'
+		},
+		'cardP3': 'Tableau Prep a fondo'
+	}
+}
+
+const allPosts = await Astro.glob('./posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+
+<BaseLayout pTitle={pageTitle} coverDesc={coverDescription} frontmatterProps='' >
+	<FloatBox floatBoxData={blogFloat} />
+	<SectionHeader sectionHeader={'Aprende más de Ciencia de Datos con nuestras publicaciones'}/>
+	<div class="tags">{tags.map((tag) => <a href={`/tags/${tag}`}>{tag}</a>)}</div>
+	<CardBox cardData={blogCard1} />
+	<CardBox cardData={blogCard2} />
+</BaseLayout>
+
+<style>
+	.tags {
+		width: 70vw;
+		margin: 3rem auto;
+		background-color: #0c74fa;
+		border-radius: 1rem;
+		padding: 1rem;
+	}
+
+	.tags a {
+		display: inline-block;
+		padding: .5rem 1rem;
+		margin: .5rem;
+		background-color: #002faf;
+		border-radius: 1rem;
+		border-bottom: 1px dotted #fff;
+	}
+
+	@media screen and (min-width: 640px){
+		.tags {
+			width: 75vw;
+		}
+	}
+
+	@media screen and (min-width: 864px){
+		.tags {
+			width: 65vw;
+		}
+	}
+
+	@media screen and (min-width: 1193px){
+		.tags {
+			width: 65rem;
+		}
+	}
+</style>

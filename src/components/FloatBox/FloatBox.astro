@@ -1,0 +1,30 @@
+---
+import './FloatBox.css'
+import MainButton from "../MainButton/MainButton.astro";
+const { floatBoxData } = Astro.props;
+const { tag, title, text } = floatBoxData;
+---
+
+<div class="general-floatbox">
+    <div class="floatbox">
+        <div class="floatbox-container">
+            <div class="body-floatbox">
+                <a href={
+                    tag === 'Una cultura basada en datos' ? "./blog" : "./services"
+                } class="tag-floatbox">{tag}</a>
+                <h2>{title}</h2>
+                <p class="text-floatbox">{text}</p>
+                <MainButton btnLabelID={'floatbox'} btnClass={'floatbox'} />
+            </div>
+            <div class={
+                        tag === 'Tecnologías'? "img-floatbox tech-fbox" : 
+                        tag === 'Business Intelligence' ? "img-floatbox bi-fbox" :
+                        tag === 'Data Science' ? "img-floatbox ds-fbox" :
+                        tag === 'Development' ? "img-floatbox dev-fbox" :
+                        tag === 'Courses' ? "img-floatbox courses-fbox" : 
+                        tag === 'Una cultura basada en datos' ? "img-floatbox blog-fbox" : ''
+            }></div>
+        </div>
+    </div>
+</div>
+

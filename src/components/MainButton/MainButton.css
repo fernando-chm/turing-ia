@@ -1,0 +1,81 @@
+/* Mobile First */
+
+.btn {
+    color: #fff;
+    font-size: 1.6rem;
+    border: 1px solid #fff;
+    padding: 1.5rem 3rem;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #0c62fb;
+    font-weight: 600;
+}
+
+.btn-home,
+.btn-about,
+.btn-services,
+.btn-blog {
+    margin-left: 5rem;
+}
+
+.btn-floatbox,
+.btn-infobox,
+.btn-contact {
+    color: #0c62fb;
+    font-size: 1.6rem;
+    border: 1px solid #0c62fb;
+    padding: 1.5rem 3rem;
+    width: fit-content;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+
+.btn-floatbox:hover,
+.btn-infobox:hover,
+.btn-contact:hover {
+    background-color: #0c62fb;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-widebox {
+    font-size: 2rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 640px){
+    .btn-home,
+    .btn-about,
+    .btn-services,
+    .btn-blog {
+        margin-left: 8rem;
+    }
+}
+
+@media screen and (min-width: 864px){
+    .btn {
+        font-size: 1.6rem;
+    }
+    
+    .btn-home,
+    .btn-about,
+    .btn-services,
+    .btn-blog {
+        margin-left: 10rem;
+    }
+}
+
+@media screen and (min-width: 1193px){
+    .btn {
+        font-size: 2rem;
+    }
+
+    .btn-floatbox {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}

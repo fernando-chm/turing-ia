@@ -1,0 +1,31 @@
+---
+const sectionHeader = Astro.props;
+---
+
+<div>
+    <h2>{sectionHeader.sectionHeader}</h2>
+</div>
+
+
+<style>
+    h2 {
+        font-size: 5rem;
+        color: #002faf;
+        width: 85%;
+        margin: 10rem 0 5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #002faf;
+    }
+
+    div {
+        width: 85vw;
+        margin: 0 auto;
+    }
+
+    @media screen and (min-width: 1193px) { 
+        div {
+            width: 100rem;
+        }
+    }
+
+</style>

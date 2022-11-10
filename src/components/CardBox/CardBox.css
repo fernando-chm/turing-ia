@@ -1,0 +1,71 @@
+/* Mobile First */
+
+.cardbox {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 10rem;
+    padding: 5rem;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-rows: auto;
+    position: relative;
+    border: 1px solid transparent;
+    max-height: fit-content;
+    transition: box-shadow 200ms ease, transform 200ms ease, max-height;
+}
+
+.card-container:hover {
+    box-shadow: -1rem 1rem #10162f;
+    transform: translate(5px, -5px);
+}
+
+.card-container img {
+    cursor: pointer;
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 3rem;
+    height: 30rem;
+}
+
+.card-container p {
+    position: absolute;
+    bottom: -55px;
+    left: 55px;
+    background-color: #f3f4f5;
+    padding: 3rem;
+    color: #3a3a3a;
+    height: fit-content;
+}
+
+.card-container p:hover {
+    background-color: #002faf;
+    color: #fff
+}
+
+@media screen and (min-width: 640px){
+    .cardbox {
+        width: 50vw;
+    }
+}
+
+@media screen and (min-width: 864px){
+    .cardbox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 8rem;
+        padding: 5rem;
+        width: 85vw;
+        max-width: 100rem;
+        margin: 5rem auto;
+    }
+
+}
+
+/* @media screen and (min-width: 1193px){
+    
+} */
+

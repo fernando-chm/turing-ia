@@ -1,0 +1,32 @@
+---
+import './Contact.css'
+import MainButton from '../MainButton/MainButton.astro';
+---
+<div class="form-container" id="contact">
+    <form>
+        <h2 class="contact-title">Hablemos de tu próximo proyecto, ¿tienes algo en mente? Contáctanos.</h2>
+        <div> 
+            <label for="fullname">Nombre</label> 
+            <input type="text" placeholder="Nombre completo" id="fullname" required>
+        </div>
+        <div> 
+            <label for="email">Email</label>
+            <input type="email" placeholder="Correo electrónico" id="email" required>
+        </div>
+        <div>
+            <label for="tel">Teléfono</label>
+            <input type="tel" placeholder="(+55) 555-555-5555" id="tel" required>
+        </div>
+        <div>
+            <label for="subject">Asunto</label>
+            <input type="text" placeholder="Asunto del mensaje" id="subject" required>
+        </div>
+        <div class="message">
+            <label for="message">Mensaje:</label>
+            <textarea id="message" placeholder="¿qué quieres decirnos?..." cols="52" wrap="hard" required></textarea>
+        </div>
+        <button type="submit">
+            <MainButton btnLabelID='contact' btnClass='contact' />
+        </button>
+    </form>
+</div>

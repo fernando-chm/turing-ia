@@ -1,0 +1,111 @@
+---
+import './WideBox.css'
+import MainButton from '../MainButton/MainButton.astro';
+const { wideBoxData } = Astro.props;
+const { item1, item2, item3, item4 } = wideBoxData;
+const { title1, keyword1, text1 } = item1;
+const { title2, keyword2, text2 } = item2;
+const { title3, keyword3, text3 } = item3;
+const { title4, keyword4, text4 } = item4;
+
+---
+
+<script>
+    import '../../scripts/wideBoxActive';
+</script>
+
+<div class={
+            title1 === 'Business Analytics' ? 'widebox-container ba-img' :
+            title1 === 'Certificados por el PMI' ? 'widebox-container pmi-img' : 
+            title1 === 'Tableau Desktop' ? 'widebox-container td-img' : 
+            'widebox-container fallback-img'
+    } >
+    <div class="grid-widebox">
+        <div class="subgrid-widebox">
+            <h2>{title1}</h2>
+            <p class="text"><span>{keyword1}</span>{text1}</p>
+            <a href={
+                title1 === 'Business Analytics' ? '/services' : 
+                title1 === 'Certificados por el PMI' ? '/services' :
+                title1 === 'Tableau Desktop' ? '/services' :  ''
+            }
+            >
+                <MainButton btnLabelID={title1} btnClass={'widebox'} />
+            </a>
+            <span class="widebox-timer"></span>
+        </div>
+        <div></div>
+    </div>
+</div>
+
+<div class={
+            title2 === 'Desarrollo de soluciones' ? 'widebox-container desarrollo-img' : 
+            title2 === 'Certificados por Tableau Platform' ? 'widebox-container tableau-img' :
+            title2 === 'Tableau Prep' ? 'widebox-container tp-img' :
+            'widebox-container fallback-img'
+    } >
+    <div class="grid-widebox">
+        <div class="subgrid-widebox">
+            <h2>{title2}</h2>
+            <p class="text"><span>{keyword2}</span>{text2}</p>
+            <a href={
+                title2 === 'Desarrollo de soluciones' ? '/services' : 
+                title2 === 'Certificados por Tableau Platform' ? '/services' :
+                title2 === 'Tableau Prep' ? '/services' : ''
+            }
+            >
+                <MainButton btnLabelID={title2} btnClass={'widebox'} />
+            </a>
+            <span class="widebox-timer"></span>
+        </div>
+        <div></div>
+    </div>
+</div>
+
+<div class={
+            title3 === 'Tecnologías' ? 'widebox-container tech-img' :
+            title3 === 'SCRUM como forma de trabajo' ? 'widebox-container scrum-img' : 
+            title3 === 'Tableau Cloud' ? 'widebox-container tc-img' :
+            'widebox-container fallback-img'
+    } >
+    <div class="grid-widebox">
+        <div class="subgrid-widebox">
+            <h2>{title3}</h2>
+            <p class="text"><span>{keyword3}</span>{text3}</p>
+            <a href={
+                title3 === 'Tecnologías' ? '/services' :
+                title3 === 'SCRUM como forma de trabajo' ? '/blog' :
+                title3 === 'Tableau Cloud' ? '/services' : ''
+            }
+            >
+                <MainButton btnLabelID={title3} btnClass={'widebox'} />
+            </a>
+            <span class="widebox-timer"></span>
+        </div>
+        <div></div>
+    </div>
+</div>
+    
+<div class={
+            title4 === 'Cursos' ? 'widebox-container cursos-img' :
+            title4 === 'Ciencia de Datos' ? 'widebox-container data-img' : 
+            title4 === 'Tableau Server' ? 'widebox-container ts-img' :
+            'widebox-container fallback-img'
+    } >
+    <div class="grid-widebox">
+        <div class="subgrid-widebox">
+            <h2>{title4}</h2>
+            <p class="text"><span>{keyword4}</span>{text4}</p>
+            <a href={
+                title4 === 'Cursos' ? '/services' :
+                title4 === 'Ciencia de Datos' ? '/blog' :
+                title4 === 'Tableau Server' ? '/services' : ''
+            }
+            >
+                <MainButton btnLabelID={title4} btnClass={'widebox'} />
+            </a>
+            <span class="widebox-timer"></span>
+        </div>
+        <div></div>
+    </div>
+</div>

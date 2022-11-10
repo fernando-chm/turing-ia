@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CardBox from "../components/CardBox/CardBox.astro";
+import FloatBox from "../components/FloatBox/FloatBox.astro";
+import InfoBox from "../components/InfoBox/InfoBox.astro";
+import WideBox from "../components/WideBox/WideBox.astro";
+import SectionHeader from "../components/SectionHeader/SectionHeader.astro";
+
+const pageTitle = "Home | Turing IA";
+const coverDescription = {
+	'headline': 'Hacemos los datos fáciles de usar',
+	'caption': 'Somos el socio estratégico que necesitas para potenciar los datos de tu organización.',
+	'buttonID': 'home'
+}
+
+// Objetos cardData
+
+const tech1 = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/tech/tech-tableau.jpg',
+			'cardImg1alt': 'Logo de Tableau'
+		},
+		'cardP1': 'Tableau'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/tech/tech-salesforce.png',
+			'cardImg2alt': 'Logo de Salesforce'
+		},
+		'cardP2': 'Salesforce'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/tech/tech-pmi.png',
+			'cardImg3alt': 'Logo de PMI'
+		},
+		'cardP3': 'Project Management Institute'
+	}
+}
+
+const caseStudies1 = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/case-studies/jpmc.jpg',
+			'cardImg1alt': 'Caso de estudio de JPMorgan Chase & Co.'
+		},
+		'cardP1': 'JPMorgan Chase elige Tableau para ofrecer análisis del sector'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/case-studies/mondelez.jpg',
+			'cardImg2alt': 'Caso de estudio de Mondelez Internacional'
+		},
+		'cardP2': 'Mondelez Internacional integra más de 160 campos de datos y genera millones en ahorro de costos'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/case-studies/petersen.jpg',
+			'cardImg3alt': 'Caso de estudio de Grupo-Petersen'
+		},
+		'cardP3': 'Grupo Petersen crea una cultura de datos con Tableau'
+	}
+}
+
+const caseStudies2 = {
+	'cardData1': {
+		'cardImg1': {
+			'cardImg1src': '../../imgs/case-studies/redhat.jpg',
+			'cardImg1alt': 'Caso de estudio de Red Hat'
+		},
+		'cardP1': 'Red Hat adopta el Blueprint de Tableau y profundiza en la cultura de datos con más de 4500 empleados en menos de un año'
+	},
+	'cardData2': {
+		'cardImg2': {
+			'cardImg2src': '../../imgs/case-studies/verizon.jpg',
+			'cardImg2alt': 'Caso de estudio de Verizon'
+		},
+		'cardP2': 'Verizon usa Tableau para reducir las llamadas de soporte en un 43% y así mejorar la experiencia del cliente'
+	},
+	'cardData3': {
+		'cardImg3': {
+			'cardImg3src': '../../imgs/case-studies/wholefoods.jpg',
+			'cardImg3alt': 'Caso de estudio de Whole Foods'
+		},
+		'cardP3': 'Whole Foods Market democratiza el acceso a los datos en sus 460 tiendas para 18,000 empleados gracias a Tableau'
+	}
+}
+
+// Objetos floatBoxData
+
+const tecnologias = {
+	'tag': 'Tecnologías',
+	'title': 'La forma ideal de gestionar tus datos',
+	'text': 'Somos el socio estratégico que necesitas para potenciar los datos de tu organización. Contamos con más de 15 años de experiencia brindando soluciones innovadoras, adaptadas a las necesidades de nuestros clientes, en más de 10 industrias y diferentes áreas funcionales.'
+}
+
+// Objetos infoBoxData
+
+const tableau = {
+	'tag': 'Software',
+	'title': 'Soluciones de negocios basadas en análisis inteligente',
+	'text': 'Tableau le brinda a tu empresa panoramas completos de análisis de datos, facilitando la toma de decisiones basada en información de confianza.',
+	'keyword': 'somos expertos en tableau',
+	'links': {
+		'a1': ['./services', 'Tableau Desktop'],
+		'a2': ['./services', 'Tableau Prep'],
+		'a3': ['./services', 'Tableau Cloud'],
+		'a4': ['./services', 'Tableau Server'],
+		'a5': ['./services', 'Tableau Server Management'],
+		'a6': ['./services', 'Tableau Data Management']
+	}
+}
+
+// Objetos wideBoxData
+
+const servicios = {
+	'item1': {
+		'title1': 'Business Analytics',
+		'keyword1': 'Gestionamos',
+		'text1': ' la planeación, construcción, monitoreo y control de las actividades y recursos involucrados en un proyecto.'
+	},
+	'item2': {
+		'title2': 'Desarrollo de soluciones',
+		'keyword2': 'Resolvemos',
+		'text2': ' tus necesidades digitales desarrollando tecnología vanguardista cuidando siempre los estándares de calidad.'
+	},
+	'item3': {
+		'title3': 'Tecnologías',
+		'keyword3': 'Brindamos',
+		'text3': ' recursos tecnológicos innovadores que permiten la escalabilidad y democratización de los datos en tu empresa.'
+	},
+	'item4': {
+		'title4': 'Cursos',
+		'keyword4': 'Enseñamos',
+		'text4': ' a nuestros clientes a trabajar con herramientas para Business Intelligence como Tableau Desktop o Tableau Server.'
+	}
+}
+---
+
+<BaseLayout pTitle={pageTitle} coverDesc={coverDescription} frontmatterProps='' >
+	<FloatBox floatBoxData={tecnologias}/>
+	<CardBox cardData={tech1} />
+	<InfoBox infoBoxData={tableau}/>
+	<WideBox wideBoxData={servicios}/>
+	<SectionHeader sectionHeader={'Historias de éxito en el tratamiento de los datos'} />
+	<CardBox cardData={caseStudies1}/>
+	<CardBox cardData={caseStudies2}/>
+</BaseLayout>
+
+
