@@ -4,9 +4,9 @@ import './CardBox.css';
 const allPosts = await Astro.glob('../../pages/posts/*.md');
 const { cardData } = Astro.props;
 const { cardData1, cardData2, cardData3 } = cardData;
-const { cardImg1, cardP1 } = cardData1;
-const { cardImg2, cardP2 } = cardData2;
-const { cardImg3, cardP3 } = cardData3;
+const { cardImg1, cardP1, type1 } = cardData1;
+const { cardImg2, cardP2, type2 } = cardData2;
+const { cardImg3, cardP3, type3 } = cardData3;
 const { cardImg1src, cardImg1alt } = cardImg1;
 const { cardImg2src, cardImg2alt } = cardImg2;
 const { cardImg3src, cardImg3alt } = cardImg3;
@@ -14,10 +14,18 @@ const { cardImg3src, cardImg3alt } = cardImg3;
 
 function getPostURL(cardNumber: number, type: string){
     switch (type) {
-        case 'about':
-            break;
-        case 'services':
-            break;
+        case 'premios':
+            return '#';
+        case 'tech':
+            return '#';
+        case 'cases-studies':
+            return '#';
+        case 'ds':
+            return './blog';
+        case 'dev':
+            return './blog';
+        case 'tableau':
+            return './services';
         case 'blog':
             for (let post = 0; post < allPosts.length; post++) {
                 if (cardNumber === 1 && allPosts[post].frontmatter.title === cardP1) {
@@ -50,19 +58,19 @@ function getPostURL(cardNumber: number, type: string){
 
 <div class="cardbox">
     <div class="card-container">
-        <a href={`${getPostURL(1, 'blog')}`}>
+        <a href={`${getPostURL(1, type1)}`}>
             <img src={cardImg1src} alt={cardImg1alt}>
         </a>
         <p>{cardP1}</p>
     </div>
     <div class="card-container">
-        <a href={`${getPostURL(2, 'blog')}`}>
+        <a href={`${getPostURL(2, type2)}`}>
             <img src={cardImg2src} alt={cardImg2alt}>
         </a>
         <p>{cardP2}</p>
     </div>
     <div class="card-container">
-        <a href={`${getPostURL(3, 'blog')}`}>
+        <a href={`${getPostURL(3, type3)}`}>
             <img src={cardImg3src} alt={cardImg3alt}>
         </a>
         <p>{cardP3}</p>

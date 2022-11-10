@@ -10,7 +10,12 @@ const { tag, title, text } = floatBoxData;
         <div class="floatbox-container">
             <div class="body-floatbox">
                 <a href={
-                    tag === 'Una cultura basada en datos' ? "./blog" : "./services"
+                    tag === 'Una cultura basada en datos' ? "./blog" :
+                    tag === 'Tecnologías' ? "./services" : 
+                    tag === 'Business Intelligence' ? "./blog" : 
+                    tag === 'Data Science' ? "./blog" : 
+                    tag === 'Development' ? "./services" : 
+                    tag === 'Courses' ? "./services" : "./services"
                 } class="tag-floatbox">{tag}</a>
                 <h2>{title}</h2>
                 <p class="text-floatbox">{text}</p>

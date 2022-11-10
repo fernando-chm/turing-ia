@@ -45,6 +45,8 @@
 .btn-widebox {
     font-size: 2rem;
     text-align: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 @media screen and (min-width: 640px){

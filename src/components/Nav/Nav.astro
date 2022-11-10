@@ -6,6 +6,7 @@ const { renderType } = Astro.props;
 ---
 <script>
     import '../../scripts/navScrolling'
+    import '../../scripts/hamburger'
 </script>
 
 <div class="nav-container">
@@ -38,7 +39,7 @@ const { renderType } = Astro.props;
                     <a href="/blog" class="link links-hover-a">Blog</a>
                 </li>
                 <li> 
-                    <a href="#contact"><p class="link contact-hover-a">Contáctanos</p></a>
+                    <a href="#contact"><p class="link contact-hover-a" id="contact">Contáctanos</p></a>
                 </li>
             </ul>
         </div>
