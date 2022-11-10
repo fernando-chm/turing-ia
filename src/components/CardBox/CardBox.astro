@@ -21,11 +21,11 @@ function getPostURL(cardNumber: number, type: string){
         case 'cases-studies':
             return '#';
         case 'ds':
-            return './blog';
+            return '/blog';
         case 'dev':
-            return './blog';
+            return '/blog';
         case 'tableau':
-            return './services';
+            return '/services';
         case 'blog':
             for (let post = 0; post < allPosts.length; post++) {
                 if (cardNumber === 1 && allPosts[post].frontmatter.title === cardP1) {
